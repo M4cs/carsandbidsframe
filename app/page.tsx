@@ -17,8 +17,11 @@ export const metadata: Metadata = {
   title: 'Cars and Bids Frame',
   description: 'Find a random Cars and Bids Auction!',
   openGraph: {
-    images: frameMetadata.image,
-    title: 'Cars and Bids Frame'
+    images: [
+      'https://carsandbidsframe.vercel.app/FirstFrame.png
+    ],
+    title: 'Cars and Bids Frame',
+    description: 'Find a random Cars and Bids Auction!',
   },
   other: {
     ...frameMetadata
