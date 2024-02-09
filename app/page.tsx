@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   openGraph: {
     images: frameMetadata.image,
     title: 'Cars and Bids Frame'
+  },
+  other: {
+    ...frameMetadata
   }
 }
 
