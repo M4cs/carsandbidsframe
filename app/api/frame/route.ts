@@ -1,6 +1,7 @@
 import { FrameRequest, getFrameHtmlResponse } from "@coinbase/onchainkit";
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
+import data from './data.json';
 
 
 async function getResponse(req: NextRequest) {
@@ -33,10 +34,6 @@ export async function POST(req: NextRequest) {
     }
 
     if (!seed) {
-        const res = await axios.get(
-            `https://carsandbids.com/v2/autos/auctions?sort=1&timestamp=1707506444729&signature=8b35dc495261eb1cd53469bb573d0235be028cab`
-        );
-        const data = res.data;
         const auctions = data.auctions;
         const curr = Math.floor(Math.random() * auctions.length);
         const next = Math.floor(Math.random() * auctions.length);
@@ -59,10 +56,6 @@ export async function POST(req: NextRequest) {
     }
 
     if (seed) {
-        const res = await axios.get(
-            `https://carsandbids.com/v2/autos/auctions?sort=1&timestamp=1707506444729&signature=8b35dc495261eb1cd53469bb573d0235be028cab`
-        );
-        const data = res.data;
         const auctions = data.auctions;
         const next = Math.floor(Math.random() * auctions.length);
         const auction = auctions[parseInt(seed)];
